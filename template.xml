@@ -1,0 +1,26 @@
+<template format="4"
+        revision="1"
+        name="Clean Architecture Template"
+        description="Creates a new package with the Interactor, Presenter, Router, and Displayable">
+ 
+    <category value="Other"/>
+ 
+    <parameter id="className"
+        name="Functionality Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="CleanFragment"
+        help="The name of the package that requires a clean architecture"/>
+		
+	<parameter
+		 id="res_name"
+		 type="string"
+		 constraints="layout|nonempty|unique"
+		 default="class_name"
+		 suggest="${extractLetters(className?lower_case)}"
+		 name="Object content layout file name" />
+ 
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+ 
+</template>
